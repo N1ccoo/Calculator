@@ -13,25 +13,29 @@
 
 	<div class="grid-container"> 
 		<div id="grid">
-			<input type="text" id="numberInput" class="font-M grid-item grid-span-4 black">
-            <button class="font-L grid-item grid-span-2 grey-border">CE</button>
-            <button class="font-L grid-item grid-span-2 grey-border">C</button>
+            <div id="inputContainer" class="grid-item grid-span-4 black grid-row-span-2" tabindex="1">
+                <div id="fadedText" class="faded"></div>
+			     <div id="numberInput" class="font-L"></div>
+            </div>
+
+            <button class="font-L grid-item grid-span-2 grey-border" id="clearEntry">CE</button>
+            <button class="font-L grid-item grid-span-2 grey-border" id="clear">C</button>
             <button class="font-L grid-item dark-grey">7</button>
             <button class="font-L grid-item dark-grey">8</button>
             <button class="font-L grid-item dark-grey">9</button>
-            <button class="font-L grid-item">÷</button>
+            <button class="font-L grid-item" id="divide">÷</button>
             <button class="font-L grid-item dark-grey">4</button>
             <button class="font-L grid-item dark-grey">5</button>
             <button class="font-L grid-item dark-grey">6</button>
-            <button class="font-L grid-item">×</button>
+            <button class="font-L grid-item" id="multiply">×</button>
             <button class="font-L grid-item dark-grey">1</button>
             <button class="font-L grid-item dark-grey">2</button>
             <button class="font-L grid-item dark-grey">3</button>
-            <button class="font-L grid-item">-</button>
+            <button class="font-L grid-item" id="subtract">-</button>
             <button class="font-L grid-item dark-grey">0</button>
             <button class="font-L grid-item dark-grey">.</button>
             <button class="font-L grid-item dark-blue">=</button>
-            <button class="font-L grid-item">+</button>
+            <button class="font-L grid-item" id="add">+</button>
 		</div>
 	</div>
     

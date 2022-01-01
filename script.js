@@ -97,6 +97,18 @@ function addInput(e) {
         number.pop(number.length-1)
         numberValue = number.join('')
         numberInput.textContent = number.join('')
+    } else if (e.key === '*') {
+        multiplyOperator()
+        console.log('mult')
+    } else if (e.key === '+') {
+        addOperator()
+        console.log('add')
+    } else if (e.key === '-') {
+        minusOperator()
+        console.log('subtract')
+    } else if (e.key === '/') {
+        divideOperator()
+        console.log('divide')
     }
 }
 
@@ -112,7 +124,6 @@ function addOperator() {
 }
 
 function minusOperator() {
-    
     operator = '-'
     fadedNumber = numberValue
     fadedInput = [fadedNumber,operator]
@@ -123,7 +134,6 @@ function minusOperator() {
 }
 
 function divideOperator() {
-    
     operator = '÷'
     fadedNumber = numberValue
     fadedInput = [fadedNumber,operator]

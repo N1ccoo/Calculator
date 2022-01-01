@@ -32,6 +32,7 @@ numberBtnZero.addEventListener('click',writeZero)
 
 numberBtn.forEach(item => {item.addEventListener('click',writeNumber)})
 
+
 function add(a,b) {
     return parseFloat(a) + parseFloat(b)
 }
@@ -176,9 +177,12 @@ function clearAll() {
 function writeZero() {
     if (number == 0 && number.length == 1) {
         number.push('.0')
+        numberValue = number.join('')
         numberInput.textContent = number.join('')
+
     } else {
         number.push('0')
+        numberValue = number.join('')
         numberInput.textContent = number.join('')
     }
 }

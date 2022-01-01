@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 :root {
-    --black: #1a1c1d;
-    --darkGrey:#303436;
-    --grey:#4b5154;
-    --darkBlue:#073276;
-    --darkWhite:#776f62;
-    --white:#dbd8d3;
+    --blue: #bcf1f1;
+    --aquamarine:#112b22;
+    --lightGreen:#91F291;
+    --green:#C2F261;
+    --yellowGreen:#F2F230;
+    --black:rgb(23, 24, 23);
 } 
 
 html{
@@ -25,23 +25,22 @@ body {
     display:flex;
     flex-direction: column;
     height: 100vh;
-    background-color:var(--black);
+    background-color:var(--aquamarine);
     gap: 2rem; 
 }
 
 #footer {
     margin-top: auto;
     text-align: center;
-    border-top: var(--darkWhite) 1px solid;
     padding: 0.5rem;
-    color: var(--white);
+    color: var(--yellowGreen);
 }
 
 #navbar {
     text-align: center;
-    border-bottom: var(--darkWhite) 1px solid;
     padding: 0.5rem;
-    color: var(--white);
+    color: var(--yellowGreen);
+    font-size: 2rem;
 }
 
 #numberInput {
@@ -58,6 +57,7 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
+    color: var(--green);
 }
 
 #grid {
@@ -75,11 +75,11 @@ body {
 }
 
 .grid-item {
-    background-color: var(--grey);
-    color: var(--white);
-    border: var(--darkWhite) 1px solid;
+    background-color: var(--aquamarine);
+    color: var(--blue);
+    border: none;
     border-radius: 8px;
-    box-shadow:0 0 15px 4px rgba(0, 0, 0, 0.06);
+    box-shadow:0 0 16px 6px rgba(3, 2, 2, 0.06);
 }
 
 .black {
@@ -87,11 +87,13 @@ body {
 }
 
 .dark-grey {
-    background-color: var(--darkGrey);
+    background-color: var(--black);
+    color: var(--lightGreen);
 }
 
-.dark-blue {
-    background-color: var(--darkBlue);
+.yellow-green {
+    background-color: var(--yellowGreen);
+    color: var(--black);
 }
 
 .font-S {
@@ -133,6 +135,6 @@ display: none;
 }
 
 .focus {
-    border: var(--darkBlue) 2px solid;
-    box-shadow:0 0 15px 4px rgba(49, 15, 236, 0.06);
+    border: var(--yellowGreen) 2px solid;
+    box-shadow:0 0 15px 4px rgba(233, 247, 49, 0.06);
 }

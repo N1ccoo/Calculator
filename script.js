@@ -10,6 +10,8 @@ let numberBtn = document.querySelectorAll('.numberBtn')
 let clearEntryBtn = document.getElementById('clearEntry')
 let clearBtn = document.getElementById('clear')
 let numberBtnZero = document.querySelector('.numberBtn-0')
+let gridItem = document.querySelectorAll('.grid-item')
+let dotBtn = document.getElementById('dot')
 
 let operator = ''
 let numberValue = ''
@@ -18,7 +20,6 @@ let fadedNumber = ''
 let fadedInput = []
 let param = []
 
-numberInput.addEventListener('change', log)
 inputContainer.addEventListener('focus',focusInputBar)
 inputContainer.addEventListener('blur',unfocusInputBar)
 addBtn.addEventListener('click',addOperator)
@@ -29,8 +30,17 @@ equalBtn.addEventListener('click',equalOperator)
 clearEntryBtn.addEventListener('click',clearEntry)
 clearBtn.addEventListener('click',clearAll)
 numberBtnZero.addEventListener('click',writeZero)
+dotBtn.addEventListener('click',writeDot)
 
 numberBtn.forEach(item => {item.addEventListener('click',writeNumber)})
+
+inputContainer.addEventListener('mouseenter',highlight)
+inputContainer.addEventListener('mouseleave',removeHighlight)
+gridItem.forEach(item => {
+    item.addEventListener('mouseover',highlightBtn)
+    item.addEventListener('mouseout',removeHighlightBtn)
+    })
+
 
 
 function add(a,b) {
@@ -187,6 +197,39 @@ function writeZero() {
     }
 }
 
-function log(e) {
-    console.log('work')
+function writeDot(e) {
+    if (number.length == 0) {
+        number.push('0')
+        number.push('.')
+        numberValue = number.join('')
+        numberInput.textContent = number.join('')
+    } 
+
+    else if (number.join('').split('').indexOf('.') == -1 ) {
+    number.push('.')
+    numberValue = number.join('')
+    numberInput.textContent = number.join('')
+    }
+}
+
+function highlight(e) {
+   
+    e.target.classList.add('highlight')
+    
+}
+
+function removeHighlight(e) {
+    
+    e.target.classList.remove('highlight')
+}
+
+function highlightBtn(e) {
+   
+    e.target.classList.add('highlightBtn')
+    
+}
+
+function removeHighlightBtn(e) {
+    
+    e.target.classList.remove('highlightBtn')
 }

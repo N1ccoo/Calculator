@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 :root {
-    --blue: #bcf1f1;
-    --aquamarine:#112b22;
-    --lightGreen:#91F291;
-    --green:#C2F261;
-    --yellowGreen:#F2F230;
-    --black:rgb(23, 24, 23);
-} 
-
+    --black:rgb(0, 0, 0);
+    --grey:rgb(32, 34, 31);
+    --neoenGreen:rgb(57, 197, 52);
+    --lightGreen:rgb(157, 238, 155);
+    --green: rgb(59, 150, 56);
+}
 html{
  font-size: 16px;
 }
@@ -25,7 +23,7 @@ body {
     display:flex;
     flex-direction: column;
     height: 100vh;
-    background-color:var(--aquamarine);
+    background-color:var(--black);
     gap: 2rem; 
 }
 
@@ -33,38 +31,42 @@ body {
     margin-top: auto;
     text-align: center;
     padding: 0.5rem;
-    color: var(--yellowGreen);
+    color: var(--lightGreen);
 }
 
 #navbar {
     text-align: center;
     padding: 0.5rem;
-    color: var(--yellowGreen);
+    color: var(--lightGreen);
     font-size: 2rem;
 }
 
 #numberInput {
-    color: var(--white);
+    color: var(--lightGreen);
     width: 100%;
     text-align: right;
     overflow-x: auto;
+    
 }
 
-
+#fadedText {
+    text-align: right;
+    color: var(--green);
+}
 
 #inputContainer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
-    color: var(--green);
+    color: var(--lightGreen);
 }
 
 #grid {
     display: grid;
     grid-template-rows: 7em repeat(5, 4em);
     grid-template-columns: repeat(4 , 6.5em);
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .grid-container {
@@ -75,25 +77,16 @@ body {
 }
 
 .grid-item {
-    background-color: var(--aquamarine);
-    color: var(--blue);
+    background-color: var(--green);
+    color: var(--grey);
     border: none;
     border-radius: 8px;
-    box-shadow:0 0 16px 6px rgba(3, 2, 2, 0.06);
+    box-shadow:0 0 6px 4px rgba(81, 207, 23, 0.164);
 }
 
-.black {
-    background-color: var(--black);
-}
-
-.dark-grey {
-    background-color: var(--black);
-    color: var(--lightGreen);
-}
-
-.yellow-green {
-    background-color: var(--yellowGreen);
-    color: var(--black);
+.display {
+    border-radius: 8px;
+    gap: 1rem;
 }
 
 .font-S {
@@ -125,16 +118,39 @@ body {
     border-radius: 8px;
 }
 
-.faded {
-    color: var(--grey);
-    text-align: right;
-}
-
 ::-webkit-scrollbar {
 display: none;
 }
 
 .focus {
-    border: var(--yellowGreen) 2px solid;
-    box-shadow:0 0 15px 4px rgba(233, 247, 49, 0.06);
+    transition: all 0.2s;
+    outline: var(--lightGreen) 3px solid;
+    box-shadow:0 0 17px 4px rgba(16, 238, 8, 0.479);
+    transform: scale(1.01);
+    
+}
+
+.bg-neonGreen {
+    background-color: var(--neoenGreen);
+}
+
+.bg-lightGreen {
+    background-color: var(--lightGreen);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.highlight {
+    transition: all 0.07s;
+    outline: var(--neoenGreen) 3px solid;
+}
+
+.highlightBtn {
+    transition: all 0.1s;
+    outline: none;
+    color:var(--black);
+    background-color: rgb(171, 221, 167);
+    box-shadow:0 0 10px 6px rgba(114, 228, 114, 0.274);
 }

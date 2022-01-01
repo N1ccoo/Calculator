@@ -99,16 +99,14 @@ function addInput(e) {
         numberInput.textContent = number.join('')
     } else if (e.key === '*') {
         multiplyOperator()
-        console.log('mult')
     } else if (e.key === '+') {
         addOperator()
-        console.log('add')
     } else if (e.key === '-') {
         minusOperator()
-        console.log('subtract')
     } else if (e.key === '/') {
         divideOperator()
-        console.log('divide')
+    } else if (e.key === 'Enter') { 
+        equalOperator()
     }
 }
 

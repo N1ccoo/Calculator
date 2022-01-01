@@ -12,6 +12,7 @@ let clearBtn = document.getElementById('clear')
 let numberBtnZero = document.querySelector('.numberBtn-0')
 
 let operator = ''
+let numberValue = ''
 let number = []
 let fadedNumber = ''
 let fadedInput = []
@@ -73,66 +74,87 @@ function unfocusInputBar(e) {
 }
 
 function addInput(e) {
-    
-
-
-    if (e.key in [1,2,3,4,5,6,7,8,9,0]) {
-    number.push(e.key)
-    numberInput.textContent = number.join('')
+    if (e.key in [1,2,3,4,5,6,7,8,9,0] && number.length == 1 && number == 0) {
+        number.push(`.${e.key}`)
+        numberValue = number.join('')
+        numberInput.textContent = number.join('')
+    } else if (e.key in [1,2,3,4,5,6,7,8,9,0]) {
+        number.push(e.key)
+        numberValue = number.join('')
+        numberInput.textContent = number.join('')
     } else if (e.key === 'Backspace') {    
-    number.pop(number.length-1)
-    numberInput.textContent = number.join('')
-
+        number.pop(number.length-1)
+        numberValue = number.join('')
+        numberInput.textContent = number.join('')
     }
 }
 
 function addOperator() {
     
     operator = '+'
-    fadedNumber = number.join('')
+    fadedNumber = numberValue
     fadedInput = [fadedNumber,operator]
     fadedText.textContent = fadedInput.join(' ')
-    
+    numberValue = number.join('')
+    number = []
+
 }
 
 function minusOperator() {
     
     operator = '-'
-    fadedNumber = number.join('')
+    fadedNumber = numberValue
     fadedInput = [fadedNumber,operator]
     fadedText.textContent = fadedInput.join(' ')
+    numberValue = number.join('')
+    number = []
    
 }
 
 function divideOperator() {
     
     operator = '÷'
-    fadedNumber = number.join('')
+    fadedNumber = numberValue
     fadedInput = [fadedNumber,operator]
     fadedText.textContent = fadedInput.join(' ')
+    numberValue = number.join('')
+    number = []
 }
 
 function multiplyOperator() {
    
     operator = '×'
-    fadedNumber = number.join('')
+    fadedNumber = numberValue
     fadedInput = [fadedNumber,operator]
     fadedText.textContent = fadedInput.join(' ')
+    numberValue = number.join('')
+    number = []
    
 }
 
 function equalOperator() {
-    param = [fadedNumber,operator,number.join(''),'=']
+    
+    param = [fadedNumber,operator,numberValue,'=']
     fadedText.textContent = param.join(' ')
     ans = operate(param[1],param[0],param[2])
     numberInput.textContent = ans
-     number = [ans]
+     numberValue = [ans]
+     operator = ''
+     fadedNumber = ''
 
 }
 
 function writeNumber(e) {
+    if (number == 0 && number.length == 1) {
+        number.push(`.${this.textContent}`)
+        numberValue = number.join('')
+        numberInput.textContent = number.join('')
+    } else {
+
     number.push(this.textContent)
+    numberValue = number.join('')
     numberInput.textContent = number.join('')
+    }
 }
 
 function clearEntry() {
